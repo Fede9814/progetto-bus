@@ -1,0 +1,12 @@
+{
+  "name": "server-autobus",
+  "version": "0.0.0",
+  "description": "ServerAutobus",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "fastify": "^2.3.0"
+  }
+}
