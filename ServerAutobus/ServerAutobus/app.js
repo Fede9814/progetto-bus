@@ -3,17 +3,13 @@ const fastify = require('fastify')({
     ignoreTrallingSlash: true
 });
 
+var metodi = require("./metodiQuery");
 
 fastify.post('/', async (request, reply) => {
     var list = request.body;
+    let res = await metodi.sendDate(list);
     console.log(list);
-    /*var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > 5000){
-        break;
-      }
-    }*/
-    return list;
+    return res;
 })
 
 const start = async () => {

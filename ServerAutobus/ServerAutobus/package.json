@@ -7,6 +7,7 @@
     "name": ""
   },
   "dependencies": {
-    "fastify": "^2.3.0"
+    "fastify": "^2.3.0",
+    "influx": "^5.0.7"
   }
 }
