@@ -1,0 +1,3 @@
+C:\Users\PC\Desktop\progetto-bus\ServerAutobus\ServerAutobus\obj\Debug\ServerAutobus.njsprojAssemblyReference.cache
+C:\Users\PC\Desktop\progetto-bus\ServerAutobus\ServerAutobus\obj\Debug\ServerAutobus.njsproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\progetto-bus\ServerAutobus\ServerAutobus\bin\Microsoft.NodejsTools.WebRole.dll
