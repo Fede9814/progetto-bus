@@ -54,7 +54,7 @@ module.exports.sendDate = async function (list) {
             return false;
         }
     }
-
+    
     return list;
 
 }
