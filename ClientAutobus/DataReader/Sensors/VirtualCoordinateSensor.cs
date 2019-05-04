@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+
 namespace DataReader.Sensors
 {
     class VirtualCoordinateSensor : ICoordinate, ISensor
@@ -44,22 +45,27 @@ namespace DataReader.Sensors
         public string ToJson()
         {
             string finish;
+            var Timestamp = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+            Console.WriteLine(Timestamp);
+
             Random random = new Random();
 
-            var request = (HttpWebRequest)WebRequest.Create("http://192.168.43.131:3000");
+            var request = (HttpWebRequest)WebRequest.Create("http://192.168.1.7:3000");
             request.ContentType = "application/json";
             request.Method = "POST";
 
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
                 string json = "{" +
-                   "\n\t\"Mezzo\": \"" + "Mezzo" + (random.Next(1, 10)) + "\"" + ",\n" +
+                   "\n\t\"Mezzo\": \"" + "1"+ "\"" + ",\n" +
                    "\t\"Latitudine\": \"" + GetLatitudine() + "\",\n" +
                    "\t\"Longitudine\": \"" + GetLongitudine() + "\",\n" +
-                   "\t\"Time\": \"" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "\",\n" +
-                   "\t\"Door_open\": \"" + IsOpen() + "\",\n" +
-                   "\t\"Door_close\": \"" + IsOpen() + "\",\n" +
-                   "\t\"n_ppl\": \"" + (random.Next(1, 10) + 10) + "\"\n" +
+                   "\t\"Time\": \"" + Timestamp +"000000000" + "\",\n" +
+                   "\t\"Door1_open\": \"" + IsOpen() + "\",\n" +
+                   "\t\"Door2_open\": \"" + IsOpen() + "\",\n" +
+                   "\t\"Door3_open\": \"" + IsOpen() + "\",\n" +
+                   "\t\"Door4_open\": \"" + IsOpen() + "\",\n" +
+                   "\t\"N_ppl\": \"" + (random.Next(1, 10) + 10) + "\"\n" +
                    "}";
 
                 finish = json;

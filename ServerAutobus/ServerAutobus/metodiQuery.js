@@ -1,36 +1,65 @@
 const Influx = require('influx');
 
 const influx = new Influx.InfluxDB({
-   host: 'localhost',
-   port: 8086,
-   database: 'time_bus',
-   username: 'fede',
-   password: 'fede',
-   schema: [
-       {
-           measurement: 'Bus',
-           fields: {
-                Num: Influx.FieldType.INTEGER, 
-                Lat: Influx.FieldType.FLOAT, 
-                Long: Influx.FieldType.FLOAT, 
-                Door1_open: Influx.FieldType.BOOLEAN, 
-                Door2_open: Influx.FieldType.BOOLEAN, 
-                Door3_open: Influx.FieldType.BOOLEAN, 
-                Door4_open: Influx.FieldType.BOOLEAN, 
+    host: 'localhost',
+    port: 8086,
+    database: 'time_bus',
+    username: 'fede',
+    password: 'fede',
+    schema: [
+        {
+            measurement: 'Bus',
+            fields: {
+                Num: Influx.FieldType.INTEGER,
+                Lat: Influx.FieldType.FLOAT,
+                Long: Influx.FieldType.FLOAT,
+                Door1_open: Influx.FieldType.BOOLEAN,
+                Door2_open: Influx.FieldType.BOOLEAN,
+                Door3_open: Influx.FieldType.BOOLEAN,
+                Door4_open: Influx.FieldType.BOOLEAN,
                 N_persone: Influx.FieldType.INTEGER
-           },
-           tags: []
-       }
-   ]
+            },
+            tags: []
+        }
+    ]
 })
 
-// const Influx = new Influx.InfluxDB('http://fede:fede@loalhost:8086/prova')
+
+module.exports.sendDate = async function (list) {
+
+    influx.writePoints([
+        {
+            measurement: 'Bus',
+            tags: {},
+            fields: {
+                Num: list.Mezzo,
+                Lat: list.Latitudine,
+                Long: list.Longitudine,
+                Door1_open: isTrue(list.Door1_open),
+                Door2_open: isTrue(list.Door2_open),
+                Door3_open: isTrue(list.Door3_open),
+                Door4_open: isTrue(list.Door4_open),
+                N_persone: list.N_ppl
+            },
+            timestamp: list.Time,
+        }
+    ], {
+            pecision: 'rfc339'
+        })
+
+    function isTrue(val) {
+        if (val == "True") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    return list;
+
+}
 
 
-
-
-influx.query("SELECT * FROM Bus")
-    .then(rows => console.log(rows))
 
 
 

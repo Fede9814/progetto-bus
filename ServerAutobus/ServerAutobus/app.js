@@ -7,6 +7,7 @@ var metodi = require("./metodiQuery");
 
 fastify.post('/', async (request, reply) => {
     var list = request.body;
+    console.log(list.Latitudine);
     let res = await metodi.sendDate(list);
     console.log(list);
     return res;
