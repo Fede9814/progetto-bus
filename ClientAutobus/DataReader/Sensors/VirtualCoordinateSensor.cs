@@ -46,11 +46,10 @@ namespace DataReader.Sensors
         {
             string finish;
             var Timestamp = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
-            Console.WriteLine(Timestamp);
 
             Random random = new Random();
 
-            var request = (HttpWebRequest)WebRequest.Create("http://192.168.1.7:3000");
+            var request = (HttpWebRequest)WebRequest.Create("http://127.0.0.1:3000");
             request.ContentType = "application/json";
             request.Method = "POST";
 

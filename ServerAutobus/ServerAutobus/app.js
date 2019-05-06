@@ -7,7 +7,6 @@ var metodi = require("./metodiQuery");
 
 fastify.post('/', async (request, reply) => {
     var list = request.body;
-    console.log(list.Latitudine);
     let res = await metodi.sendDate(list);
     console.log(list);
     return res;
@@ -15,7 +14,7 @@ fastify.post('/', async (request, reply) => {
 
 const start = async () => {
     try {
-        await fastify.listen(3000, '192.168.1.7')
+        await fastify.listen(3000, '127.0.0.1')
 
         fastify.log.info(`server listening on ${fastify.server.address().port}`)
 
