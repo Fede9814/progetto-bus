@@ -14,7 +14,7 @@ fastify.post('/', async (request, reply) => {
 
 const start = async () => {
     try {
-        await fastify.listen(3000, '127.0.0.1')
+        await fastify.listen(3000, '192.168.43.131')
 
         fastify.log.info(`server listening on ${fastify.server.address().port}`)
 

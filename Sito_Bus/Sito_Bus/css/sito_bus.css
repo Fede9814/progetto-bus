@@ -1,0 +1,17 @@
+﻿body {
+}
+
+.site-header {
+    background-color: rgba(0, 0, 0, .85);
+}
+
+.site-header a {
+    color: #999;
+    transition: ease-in-out color .15s;
+    text-decoration: none;
+}
+
+.site-header a:hover {
+    color: white;
+    font-weight:bold;
+}

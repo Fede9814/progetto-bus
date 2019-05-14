@@ -45,7 +45,11 @@ namespace DataReader.Sensors
         public string ToJson()
         {
             string finish;
-            var Timestamp = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+            var Timestamp = new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds();
+
+            var time = (DateTime.Now);
+
+            Console.WriteLine(time);
 
             Random random = new Random();
 
@@ -59,7 +63,7 @@ namespace DataReader.Sensors
                    "\n\t\"Mezzo\": \"" + "1"+ "\"" + ",\n" +
                    "\t\"Latitudine\": \"" + GetLatitudine() + "\",\n" +
                    "\t\"Longitudine\": \"" + GetLongitudine() + "\",\n" +
-                   "\t\"Time\": \"" + Timestamp +"000000000" + "\",\n" +
+                   "\t\"Time\": \"" + Timestamp.ToString() +"000000000" + "\",\n" +
                    "\t\"Door1_open\": \"" + IsOpen() + "\",\n" +
                    "\t\"Door2_open\": \"" + IsOpen() + "\",\n" +
                    "\t\"Door3_open\": \"" + IsOpen() + "\",\n" +
