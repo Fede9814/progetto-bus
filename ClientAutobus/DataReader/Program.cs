@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataReader.Sensors;
-using CSRedis;
 
 namespace DataReader
 {
@@ -18,16 +17,19 @@ namespace DataReader
                 new VirtualCoordinateSensor()
             };
 
+            
+
             while (true)
             {
                 foreach (ISensor sensor in sensors)
                 {
-                    Console.WriteLine(sensor.ToJson());
+                    // get current sensor value
+                    var data = sensor.ToJson();
+                    Console.WriteLine(data);
 
-                    System.Threading.Thread.Sleep(10000);
-
+                    // wait 5 second
+                    System.Threading.Thread.Sleep(5000);
                 }
-
             }
         }
     }

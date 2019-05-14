@@ -12,6 +12,11 @@ fastify.post('/', async (request, reply) => {
     return res;
 })
 
+fastify.get('/ping', async (request, reply) => {
+    var res = "ciao";
+    return res;
+})
+
 const start = async () => {
     try {
         await fastify.listen(3000, '192.168.43.131')
