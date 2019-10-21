@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitoBus", "SitoBus\SitoBus.csproj", "{74B15551-9CFA-4134-9861-DFC010352C14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74B15551-9CFA-4134-9861-DFC010352C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74B15551-9CFA-4134-9861-DFC010352C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74B15551-9CFA-4134-9861-DFC010352C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74B15551-9CFA-4134-9861-DFC010352C14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60AB5AA8-7123-4095-8547-A728DA0D5521}
+	EndGlobalSection
+EndGlobal

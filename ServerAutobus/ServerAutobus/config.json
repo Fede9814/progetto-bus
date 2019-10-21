@@ -1,0 +1,6 @@
+{
+	"InfluxAddress":"localhost",
+	"InfluxPort":8086,
+	"ListenAddress":"192.168.43.131",
+	"ListenPort":3000
+}

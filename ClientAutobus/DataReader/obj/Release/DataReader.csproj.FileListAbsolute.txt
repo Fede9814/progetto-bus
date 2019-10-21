@@ -1,0 +1,10 @@
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\bin\Release\DataReader.exe.config
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\bin\Release\DataReader.exe
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\bin\Release\DataReader.pdb
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\bin\Release\csredis.dll
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\bin\Release\csredis.xml
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\obj\Release\DataReader.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\obj\Release\DataReader.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\obj\Release\DataReader.csproj.CopyComplete
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\obj\Release\DataReader.exe
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\obj\Release\DataReader.pdb

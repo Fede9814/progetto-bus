@@ -49,10 +49,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sensors\ISensor.cs" />
     <Compile Include="Sensors\ICoordinate.cs" />
-    <Compile Include="Sensors\VirtualCoordinateSensor.cs" />
+    <Compile Include="Sensors\VirtualCoordinateSensor.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

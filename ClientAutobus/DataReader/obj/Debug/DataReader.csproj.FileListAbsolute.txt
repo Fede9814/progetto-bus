@@ -1,0 +1,40 @@
+C:\Users\PC\Desktop\its-projectwork-2018-master\DataReader\bin\Debug\DataReader.exe.config
+C:\Users\PC\Desktop\its-projectwork-2018-master\DataReader\bin\Debug\DataReader.exe
+C:\Users\PC\Desktop\its-projectwork-2018-master\DataReader\bin\Debug\DataReader.pdb
+C:\Users\PC\Desktop\its-projectwork-2018-master\DataReader\bin\Debug\csredis.dll
+C:\Users\PC\Desktop\its-projectwork-2018-master\DataReader\bin\Debug\csredis.xml
+C:\Users\PC\Desktop\its-projectwork-2018-master\DataReader\obj\Debug\DataReader.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\its-projectwork-2018-master\DataReader\obj\Debug\DataReader.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\its-projectwork-2018-master\DataReader\obj\Debug\DataReader.csproj.CopyComplete
+C:\Users\PC\Desktop\its-projectwork-2018-master\DataReader\obj\Debug\DataReader.exe
+C:\Users\PC\Desktop\its-projectwork-2018-master\DataReader\obj\Debug\DataReader.pdb
+C:\Users\PC\Desktop\its-projectwork-2018-master - Copia\DataReader\bin\Debug\DataReader.exe.config
+C:\Users\PC\Desktop\its-projectwork-2018-master - Copia\DataReader\bin\Debug\DataReader.exe
+C:\Users\PC\Desktop\its-projectwork-2018-master - Copia\DataReader\bin\Debug\DataReader.pdb
+C:\Users\PC\Desktop\its-projectwork-2018-master - Copia\DataReader\bin\Debug\csredis.dll
+C:\Users\PC\Desktop\its-projectwork-2018-master - Copia\DataReader\bin\Debug\csredis.xml
+C:\Users\PC\Desktop\its-projectwork-2018-master - Copia\DataReader\obj\Debug\DataReader.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\its-projectwork-2018-master - Copia\DataReader\obj\Debug\DataReader.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\its-projectwork-2018-master - Copia\DataReader\obj\Debug\DataReader.csproj.CopyComplete
+C:\Users\PC\Desktop\its-projectwork-2018-master - Copia\DataReader\obj\Debug\DataReader.exe
+C:\Users\PC\Desktop\its-projectwork-2018-master - Copia\DataReader\obj\Debug\DataReader.pdb
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\bin\Debug\DataReader.exe.config
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\bin\Debug\DataReader.exe
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\bin\Debug\DataReader.pdb
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\bin\Debug\csredis.dll
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\bin\Debug\csredis.xml
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\obj\Debug\DataReader.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\obj\Debug\DataReader.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\obj\Debug\DataReader.csproj.CopyComplete
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\obj\Debug\DataReader.exe
+C:\Users\PC\Desktop\Project Work\Client ProjectWork\DataReader\obj\Debug\DataReader.pdb
+C:\Users\PC\Desktop\progetto-bus\ClientAutobus\DataReader\bin\Debug\DataReader.exe.config
+C:\Users\PC\Desktop\progetto-bus\ClientAutobus\DataReader\bin\Debug\DataReader.exe
+C:\Users\PC\Desktop\progetto-bus\ClientAutobus\DataReader\bin\Debug\DataReader.pdb
+C:\Users\PC\Desktop\progetto-bus\ClientAutobus\DataReader\bin\Debug\csredis.dll
+C:\Users\PC\Desktop\progetto-bus\ClientAutobus\DataReader\bin\Debug\csredis.xml
+C:\Users\PC\Desktop\progetto-bus\ClientAutobus\DataReader\obj\Debug\DataReader.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\progetto-bus\ClientAutobus\DataReader\obj\Debug\DataReader.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\progetto-bus\ClientAutobus\DataReader\obj\Debug\DataReader.csproj.CopyComplete
+C:\Users\PC\Desktop\progetto-bus\ClientAutobus\DataReader\obj\Debug\DataReader.exe
+C:\Users\PC\Desktop\progetto-bus\ClientAutobus\DataReader\obj\Debug\DataReader.pdb

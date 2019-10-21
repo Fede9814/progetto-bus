@@ -1,8 +1,12 @@
 const Influx = require('influx');
+var CONFIG = require('./config.json');
+
+var influxAddress = CONFIG.InfluxAddress;
+var influxPort = CONFIG.InfluxPort;
 
 const influx = new Influx.InfluxDB({
-    host: 'localhost',
-    port: 8086,
+    host: influxAddress,
+    port: influxPort,
     database: 'time_bus',
     username: 'fede',
     password: 'fede',
@@ -27,6 +31,7 @@ const influx = new Influx.InfluxDB({
 
 module.exports.sendDate = async function (list) {
 
+    
     influx.writePoints([
         {
             measurement: 'Bus',

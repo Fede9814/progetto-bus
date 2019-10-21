@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SitoBus.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="it">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/sito_bus.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sito Autobus</title>
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="site-header sticky-top py-1">
+            <div class="container d-flex flex-column flex-md-row justify-content-between">
+                <a class="py-2 d-none d-md-inline-block" href="Default.aspx">Home Page</a>
+                <a class="py-2 d-none d-md-inline-block" href="Mappe.aspx">Mappe</a>
+                <a class="py-2 d-none d-md-inline-block" href="#">Tratte</a>
+                <a class="py-2 d-none d-md-inline-block" href="#">Autobus</a>
+                <a class="py-2 d-none d-md-inline-block" href="#">Contatti</a>
+            </div>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    </form>
+</body>
+</html>

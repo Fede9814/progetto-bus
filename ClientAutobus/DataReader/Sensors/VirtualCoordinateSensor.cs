@@ -6,12 +6,44 @@ using System.Net;
 using System.Text;
 using CSRedis;
 using System.Threading.Tasks;
+using System.Configuration;
 
 
 namespace DataReader.Sensors
 {
-    class VirtualCoordinateSensor : ICoordinate, ISensor
+    public class MyWebClient : WebClient
     {
+        public TimeSpan Timeout { get; set; }
+
+        public MyWebClient(TimeSpan timeout)
+        {
+            Timeout = timeout;
+        }
+
+        protected override WebRequest GetWebRequest(Uri uri)
+        {
+            var request = base.GetWebRequest(uri);
+            if (request == null)
+            {
+                return null;
+            }
+
+            var timeoutInMilliseconds = (int)Timeout.TotalMilliseconds;
+
+            request.Timeout = timeoutInMilliseconds;
+            if (request is HttpWebRequest httpWebRequest)
+            {
+                httpWebRequest.ReadWriteTimeout = timeoutInMilliseconds;
+            }
+
+            return request;
+        }
+    }
+
+        class VirtualCoordinateSensor : ICoordinate, ISensor
+    {
+        static string serverAddress = ConfigurationSettings.AppSettings["ServerAddress"];
+        string redisAddress = ConfigurationSettings.AppSettings["redisAddress"];
 
         public String GetLatitudine()
         {
@@ -49,10 +81,11 @@ namespace DataReader.Sensors
 
         public static bool CheckForInternetConnection()
         {
+            
             try
             {
-                using (var client = new WebClient())
-                using (client.OpenRead("http://192.168.43.131:3000/ping"))
+                using (var client = new MyWebClient(TimeSpan.FromSeconds(5)))                    
+                using (client.OpenRead(serverAddress + "/ping"))
                 {
                     return true;
                 }
@@ -65,7 +98,7 @@ namespace DataReader.Sensors
 
         public void Pop(RedisClient redis)
         {
-            var request = (HttpWebRequest)WebRequest.Create("http://192.168.43.131:3000");
+            var request = (HttpWebRequest)WebRequest.Create(serverAddress);
             request.ContentType = "application/json";
             request.Method = "POST";
 
@@ -73,7 +106,6 @@ namespace DataReader.Sensors
             {
 
                 var j = redis.BLPop(30, "sensors_data");
-                Console.WriteLine(j);
                 streamWriter.Write(j);
                 streamWriter.Flush();
                 streamWriter.Close();
@@ -91,15 +123,16 @@ namespace DataReader.Sensors
         public string ToJson()
         {
             string finish="";
-            var Timestamp = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+            var Timestamp = new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds();
+            Console.WriteLine(Timestamp);
             Random random = new Random();
 
-            var request = (HttpWebRequest)WebRequest.Create("http://192.168.43.131:3000");
+            var request = (HttpWebRequest)WebRequest.Create(serverAddress);
             request.ContentType = "application/json";
             request.Method = "POST";
 
             // configure Redis
-            var redis = new RedisClient("127.0.0.1");
+            var redis = new RedisClient(redisAddress);
 
             if (CheckForInternetConnection())
             {
