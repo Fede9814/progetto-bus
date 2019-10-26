@@ -147,7 +147,7 @@ namespace DataReader.Sensors
                     {
 
                         string json = "{" +
-                         "\n\t\"Mezzo\": \"" + "1" + "\"" + ",\n" +
+                         "\n\t\"Mezzo\": \"" + "2" + "\"" + ",\n" +
                          "\t\"Latitudine\": \"" + GetLatitudine() + "\",\n" +
                          "\t\"Longitudine\": \"" + GetLongitudine() + "\",\n" +
                          "\t\"Time\": \"" + Timestamp + "000000000" + "\",\n" +

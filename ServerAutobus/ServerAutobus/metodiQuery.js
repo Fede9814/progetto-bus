@@ -31,7 +31,7 @@ const influx = new Influx.InfluxDB({
 
 module.exports.sendDate = async function (list) {
 
-    
+
     influx.writePoints([
         {
             measurement: 'Bus',
@@ -59,12 +59,17 @@ module.exports.sendDate = async function (list) {
             return false;
         }
     }
-    
     return list;
-
 }
 
+module.exports.getDateByNum = async function (num) {
+    return influx.query(`SELECT * FROM Bus WHERE Num = ${num}  ORDER BY time DESC LIMIT 10`);
+}
 
+module.exports.getDate = async function () {
+    return influx.query('SELECT COUNT(DISTINCT(Num)) FROM Bus');
+}
 
-
-
+module.exports.getFirstBus = async function (num) {
+    return influx.query(`SELECT * FROM Bus WHERE Num = ${num}  ORDER BY time DESC LIMIT 1`);
+}

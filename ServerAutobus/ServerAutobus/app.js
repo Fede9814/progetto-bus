@@ -31,6 +31,20 @@ fastify.get('/ping', async (request, reply) => {
     return res;
 })
 
+fastify.get("/getBus/:num", async (request, reply) => {
+    num = request.params['num'];
+    return await metodi.getDateByNum(num);
+});
+
+fastify.get("/getBus", async (request, reply) => {
+    return await metodi.getDate();
+});
+
+fastify.get("/getFirstBus/:num", async (request, reply) => {
+    num = request.params['num'];
+    return await metodi.getFirstBus(num);
+});
+
 const start = async () => {
     try {
         await fastify.listen(listenPort, listenAddress)
@@ -38,8 +52,9 @@ const start = async () => {
         fastify.log.info(`server listening on ${fastify.server.address().port}`)
 
     } catch (err) {
-        fastify.log.error(err)
-        process.exit(1)
+        //fastify.log.error(err)
+        console.log(err)
+        //process.exit(1)
     }
 }
 start()
