@@ -31,7 +31,7 @@ namespace SitoBus
                     Debug.WriteLine(coutBus);
 
                     for (var x = 1; x <= coutBus; x++) {
-                        DropDownList1.Items.Add(new ListItem("Veicolo" + x, x.ToString()));
+                        DropDownList1.Items.Add(new ListItem("Veicolo " + x, x.ToString()));
                     }
                 }
                 catch (Exception x)
@@ -44,19 +44,6 @@ namespace SitoBus
         {
             public DateTime time { get; set; }
             public int count { get; set; }
-        }
-
-        public class Mezzo
-        {
-            public DateTime time { get; set; }
-            public bool Door1_open { get; set; }
-            public bool Door2_open { get; set; }
-            public bool Door3_open { get; set; }
-            public bool Door4_open { get; set; }
-            public double Lat { get; set; }
-            public double Long { get; set; }
-            public int N_persone { get; set; }
-            public int Num { get; set; }
         }
 
         public int GetListBus()
@@ -86,43 +73,8 @@ namespace SitoBus
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String num = DropDownList1.SelectedValue;
-            try
-            {
-                var val = 0;
-                Int32.TryParse(num, out val);
-                var listBus = GetListBusByNum(val);
-                string json = JsonConvert.SerializeObject(listBus);
-                Debug.WriteLine(json);
-
-                divpass.InnerText = json.ToString();            
-
-            }
-            catch (Exception x)
-            {
-                System.Console.WriteLine(x);
-            }
+            
         }
-        public List<Mezzo> GetListBusByNum(int num)
-        {
-            var addr = "http://192.168.43.131:3000/getBus/" + num;
-            var request = (HttpWebRequest)WebRequest.Create(addr);
-            Debug.WriteLine(num);
-            request.Method = "GET";
-            var content = string.Empty;
-            using (var response = (HttpWebResponse)request.GetResponse())
-            {
-                using (var stream = response.GetResponseStream())
-                {
-                    using (var sr = new StreamReader(stream))
-                    {
-                        content = sr.ReadToEnd();
-                        var details = JsonConvert.DeserializeObject<List<Mezzo>>(content);
 
-                        return details;
-                    }
-                }
-            }
-        }
     }
 }

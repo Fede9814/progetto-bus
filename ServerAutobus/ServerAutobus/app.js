@@ -3,6 +3,12 @@ const fastify = require('fastify')({
     ignoreTrallingSlash: true
 });
 
+fastify.register(require('fastify-cors'), {
+    origin: true,
+    allowedHeaders: ['Content-Type'],
+    methods: ['GET']
+})
+
 var CONFIG = require('./config.json');
 
 var listenAddress = CONFIG.ListenAddress;

@@ -8,7 +8,7 @@ namespace DataReader.Sensors
 {
     interface ISensor
     {
-        string ToJson();
+        string ToJson(int token, double[,] array);
 
 
     }

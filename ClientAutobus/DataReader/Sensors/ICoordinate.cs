@@ -8,9 +8,6 @@ namespace DataReader.Sensors
 {
     interface ICoordinate
     {
-        String GetLatitudine();
-
-        String GetLongitudine();
 
     }
 }

@@ -7,7 +7,7 @@ using System.Text;
 using CSRedis;
 using System.Threading.Tasks;
 using System.Configuration;
-
+using System.Net.NetworkInformation;
 
 namespace DataReader.Sensors
 {
@@ -44,24 +44,8 @@ namespace DataReader.Sensors
     {
         static string serverAddress = ConfigurationSettings.AppSettings["ServerAddress"];
         string redisAddress = ConfigurationSettings.AppSettings["redisAddress"];
-
-        public String GetLatitudine()
-        {
-            Random random = new Random();
-            var cord = new decimal((double)(random.NextDouble() * (20) + 10));
-            var conv = cord.ToString();
-            var cong = conv.Replace(',', '.');
-            return cong;
-        }
-
-        public String GetLongitudine()
-        {
-            Random random = new Random(DateTime.Now.Second);
-            var cord = new decimal((double)(random.NextDouble() * (20) + 10));
-            var conv = cord.ToString();
-            var cong = conv.Replace(',', '.');
-            return cong;
-        }
+        
+        
 
         public Boolean IsOpen()
         {
@@ -119,19 +103,19 @@ namespace DataReader.Sensors
             }
         }
 
-
-        public string ToJson()
+        public string ToJson(int token, double[,] array)
         {
-            string finish="";
+            string finish = "";
             var Timestamp = new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds();
             Console.WriteLine(Timestamp);
             Random random = new Random();
+
 
             var request = (HttpWebRequest)WebRequest.Create(serverAddress);
             request.ContentType = "application/json";
             request.Method = "POST";
 
-            // configure Redis
+            configure Redis
             var redis = new RedisClient(redisAddress);
 
             if (CheckForInternetConnection())
@@ -147,9 +131,9 @@ namespace DataReader.Sensors
                     {
 
                         string json = "{" +
-                         "\n\t\"Mezzo\": \"" + "2" + "\"" + ",\n" +
-                         "\t\"Latitudine\": \"" + GetLatitudine() + "\",\n" +
-                         "\t\"Longitudine\": \"" + GetLongitudine() + "\",\n" +
+                         "\n\t\"Mezzo\": \"" + "1" + "\"" + ",\n" +
+                         "\t\"Latitudine\": \"" + array[token, 1] + "\",\n" +
+                         "\t\"Longitudine\": \"" + array[token, 0] + "\",\n" +
                          "\t\"Time\": \"" + Timestamp + "000000000" + "\",\n" +
                          "\t\"Door1_open\": \"" + IsOpen() + "\",\n" +
                          "\t\"Door2_open\": \"" + IsOpen() + "\",\n" +
@@ -184,8 +168,8 @@ namespace DataReader.Sensors
             {
                 string json = "{" +
                     "\n\t\"Mezzo\": \"" + "1" + "\"" + ",\n" +
-                    "\t\"Latitudine\": \"" + GetLatitudine() + "\",\n" +
-                    "\t\"Longitudine\": \"" + GetLongitudine() + "\",\n" +
+                    "\t\"Latitudine\": \"" + array[token, 1] + "\",\n" +
+                    "\t\"Longitudine\": \"" + array[token, 0] + "\",\n" +
                     "\t\"Time\": \"" + Timestamp + "000000000" + "\",\n" +
                     "\t\"Door1_open\": \"" + IsOpen() + "\",\n" +
                     "\t\"Door2_open\": \"" + IsOpen() + "\",\n" +
@@ -195,13 +179,12 @@ namespace DataReader.Sensors
                     "}";
 
                 finish = json;
-                // push to redis queue
+                push to redis queue
                 redis.LPush("sensors_data", finish);
             }
 
-
-
             return finish;
         }
+
     }
 }

@@ -63,13 +63,13 @@ module.exports.sendDate = async function (list) {
 }
 
 module.exports.getDateByNum = async function (num) {
-    return influx.query(`SELECT * FROM Bus WHERE Num = ${num}  ORDER BY time DESC LIMIT 10`);
+    return influx.query(`SELECT * FROM Bus WHERE Num = ${num}  ORDER BY time DESC`);
 }
 
 module.exports.getDate = async function () {
     return influx.query('SELECT COUNT(DISTINCT(Num)) FROM Bus');
 }
-
+ 
 module.exports.getFirstBus = async function (num) {
     return influx.query(`SELECT * FROM Bus WHERE Num = ${num}  ORDER BY time DESC LIMIT 1`);
 }
